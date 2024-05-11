@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_clean_coding/config/components/round_btn.dart';
 
 import '../colors/app_colors.dart';
+import 'round_btn.dart';
 
 class InternetExceptionWidget extends StatelessWidget {
   final VoidCallback onPressed;

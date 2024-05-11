@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../config/routes/routes_name.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -12,8 +14,13 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('loginScreen'),
+      body: Center(
+        child: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, RoutesName.homeScreen);
+          },
+          child: const Icon(Icons.home),
+        ),
       ),
     );
   }

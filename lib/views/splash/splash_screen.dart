@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/routes/routes_name.dart';
+import '../../services/splash/splash_services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,19 +10,22 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SplashServices splashServices = SplashServices();
+  @override
+  void initState() {
+    super.initState();
+
+    splashServices.isLogin(context);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: Center(
             child: SizedBox(
       height: 20,
       width: 100,
-      child: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, RoutesName.homeScreen);
-        },
-        child: const Icon(Icons.home),
-      ),
+      child: Text('Splash Screen'),
     )));
   }
 }
