@@ -1,11 +1,11 @@
 class AppExceptions implements Exception {
-  final _message;
-  final _prefix;
-  AppExceptions(this._message, this._prefix);
+  final String? message;
+  final String? prefix;
+  AppExceptions(this.message, this.prefix);
 
   @override
   String toString() {
-    return '$_message$_prefix';
+    return '$message$prefix';
   }
 }
 
@@ -24,6 +24,6 @@ class RequestTimeoutException extends AppExceptions {
       : super(message, 'Request Time out');
 }
 
-class FetchDataException extends AppExceptions {
-  FetchDataException([String? message]) : super(message, '');
+class GeneralException extends AppExceptions {
+  GeneralException([String? message]) : super(message, '');
 }
